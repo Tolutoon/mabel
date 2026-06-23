@@ -66,8 +66,10 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 2rem;
+  min-height: 100dvh;
+  padding: 1.5rem 1rem;
   text-align: center;
+  width: 100%;
 }
 
 /* ── Screen 1: Envelope ── */
@@ -80,9 +82,9 @@ body {
 }
 
 .intro-title {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 4vw, 1.4rem);
   color: #ffe0f0;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
@@ -167,7 +169,8 @@ body {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
+  width: 100%;
   max-width: 640px;
 }
 
@@ -176,7 +179,8 @@ body {
   border: 1px solid rgba(255, 182, 217, 0.3);
   backdrop-filter: blur(12px);
   border-radius: 20px;
-  padding: 3rem 2.5rem;
+  padding: clamp(1.5rem, 5vw, 3rem) clamp(1.2rem, 5vw, 2.5rem);
+  width: 100%;
   max-width: 600px;
   box-shadow: 0 0 60px rgba(255, 105, 180, 0.15);
   position: relative;
@@ -193,7 +197,7 @@ body {
 }
 
 .letter-name {
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 10vw, 3.5rem);
   font-weight: bold;
   background: linear-gradient(90deg, #ff69b4, #ffb6d9, #ff69b4);
   background-size: 200%;
@@ -205,15 +209,15 @@ body {
 }
 
 .letter-subtitle {
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
   color: #ffb6d9;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .letter-body {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
   line-height: 1.9;
   color: #ffe8f5;
   text-align: left;
@@ -239,11 +243,13 @@ body {
   display: none;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 0.5rem;
 }
 
 .question-text {
-  font-size: clamp(2rem, 6vw, 4rem);
+  font-size: clamp(1.6rem, 7vw, 4rem);
   font-weight: bold;
   background: linear-gradient(135deg, #ff69b4, #fff, #ff69b4);
   background-size: 200%;
@@ -261,15 +267,16 @@ body {
 
 .buttons {
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .btn-yes {
-  padding: 1rem 3rem;
-  font-size: 1.3rem;
+  padding: clamp(0.8rem, 3vw, 1rem) clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.1rem, 4vw, 1.3rem);
   font-family: 'Georgia', serif;
   background: linear-gradient(135deg, #ff69b4, #c2185b);
   color: white;
@@ -279,16 +286,18 @@ body {
   box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   letter-spacing: 1px;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.btn-yes:hover {
-  transform: scale(1.1);
+.btn-yes:hover, .btn-yes:active {
+  transform: scale(1.08);
   box-shadow: 0 6px 30px rgba(255, 105, 180, 0.8);
 }
 
 .btn-no {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
+  padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 4vw, 2rem);
+  font-size: clamp(0.9rem, 3vw, 1rem);
   font-family: 'Georgia', serif;
   background: transparent;
   color: #ffb6d9;
@@ -297,6 +306,8 @@ body {
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* ── Screen 4: Answer ── */
@@ -319,9 +330,10 @@ body {
 }
 
 .answer-sub {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   color: #ffe8f5;
   line-height: 1.7;
+  padding: 0 0.5rem;
 }
 
 .confetti-hearts {
@@ -338,20 +350,22 @@ body {
 
 /* ── Shared buttons ── */
 .btn-continue {
-  padding: 0.8rem 2.5rem;
-  font-size: 1rem;
+  padding: clamp(0.7rem, 2.5vw, 0.8rem) clamp(1.5rem, 5vw, 2.5rem);
+  font-size: clamp(0.9rem, 3vw, 1rem);
   font-family: 'Georgia', serif;
   background: linear-gradient(135deg, #ff69b4, #c2185b);
   color: white;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   box-shadow: 0 4px 15px rgba(255,105,180,0.4);
   transition: transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-.btn-continue:hover { transform: scale(1.05); }
+.btn-continue:hover, .btn-continue:active { transform: scale(1.05); }
 
 /* ── Fireworks canvas ── */
 #fireworks-canvas {
@@ -387,4 +401,27 @@ body {
 @keyframes bounce {
   from { transform: translateY(0); }
   to   { transform: translateY(-12px); }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .container { padding: 1.2rem 0.8rem; }
+
+  .envelope-wrap,
+  .envelope-body { width: 150px; height: 100px; }
+  .envelope-flap  { border-left-width: 75px; border-right-width: 75px; border-top-width: 50px; }
+  .envelope-bottom { border-left-width: 75px; border-right-width: 75px; border-bottom-width: 58px; }
+  .envelope-left  { border-top-width: 50px; border-bottom-width: 50px; border-left-width: 66px; }
+  .envelope-right { border-top-width: 50px; border-bottom-width: 50px; border-right-width: 66px; }
+  .envelope-heart { font-size: 1.6rem; }
+
+  .letter-card { border-radius: 16px; }
+  .letter-signature { font-size: 0.9rem; }
+
+  #question-screen { gap: 1.5rem; }
+  .question-emoji  { font-size: 2.4rem; }
+
+  #answer-screen { gap: 1.2rem; }
+  .confetti-hearts { font-size: 2rem; letter-spacing: 6px; }
+  .answer-title { line-height: 1.2; }
 }

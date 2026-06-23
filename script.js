@@ -1,6 +1,6 @@
 // Stars
 const starsEl = document.getElementById('stars');
-for (let i = 0; i < 120; i++) {
+for (let i = 0; i < 40; i++) {
   const s = document.createElement('div');
   s.className = 'star';
   s.style.left = Math.random() * 100 + '%';
@@ -42,7 +42,7 @@ function show(id) {
 }
 
 function openLetter()   { show('letter-screen'); }
-function showQuestion() { show('question-screen'); }
+function showQuestion() { show('question-screen'); initNoButton(); }
 
 // No button runs away
 let noCount = 0;
@@ -62,6 +62,16 @@ function runAway(btn) {
   btn.textContent = noLabels[Math.min(noCount, noLabels.length - 1)];
 }
 
+// Wire up touch support for the No button after question screen loads
+function initNoButton() {
+  const btn = document.getElementById('noBtn');
+  if (!btn) return;
+  btn.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    runAway(btn);
+  }, { passive: false });
+}
+
 // Yes!
 function sayYes() {
   show('answer-screen');
@@ -73,8 +83,8 @@ function launchFireworks() {
   const canvas = document.getElementById('fireworks-canvas');
   canvas.style.display = 'block';
   const ctx = canvas.getContext('2d');
-  canvas.width  = window.innerWidth;
-  canvas.height = window.innerHeight;
+  canvas.width  = window.visualViewport ? window.visualViewport.width  : window.innerWidth;
+  canvas.height = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
   const particles = [];
 
