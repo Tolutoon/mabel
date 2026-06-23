@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Mabel 💌</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="stars" id="stars"></div>
+  <div class="hearts-bg" id="hearts-bg"></div>
+  <canvas id="fireworks-canvas"></canvas>
+
+  <div class="container">
+
+    <!-- Screen 1: Envelope -->
+    <div id="envelope-screen">
+      <p class="intro-title">You have a message ✨</p>
+      <div class="envelope-wrap" onclick="openLetter()">
+        <div class="envelope-body">
+          <div class="envelope-flap"></div>
+          <div class="envelope-bottom"></div>
+          <div class="envelope-left"></div>
+          <div class="envelope-right"></div>
+          <span class="envelope-heart">💌</span>
+        </div>
+      </div>
+      <p class="tap-hint">tap to open</p>
+    </div>
+
+    <!-- Screen 2: Letter -->
+    <div id="letter-screen">
+      <div class="letter-card">
+        <div class="letter-name">Mabel</div>
+        <div class="letter-subtitle">this one's for you</div>
+        <div class="letter-body">
+          <p>There are some people who walk into your life and just… stay. Not because they have to, but because something about them fits perfectly into a space you didn't even know was empty.</p>
+          <p>You're <span class="highlight">one of those people</span> for me.</p>
+          <p>I find myself thinking about you at the strangest times — in the middle of a song, during a quiet moment, whenever something funny happens and you're the first person I want to tell.</p>
+          <p>I don't want to overthink this. I just know that <span class="highlight">being around you makes everything feel lighter</span>, and I'd really love the chance to make you smile more often — on purpose.</p>
+          <p>So I figured I'd be brave enough to ask…</p>
+        </div>
+        <div class="letter-signature">— with a lot of love 🌙</div>
+      </div>
+      <button class="btn-continue" onclick="showQuestion()">keep reading →</button>
+    </div>
+
+    <!-- Screen 3: The Question -->
+    <div id="question-screen">
+      <div class="question-emoji">🌹</div>
+      <div class="question-text">Will you be my girlfriend, Mabel?</div>
+      <div class="buttons">
+        <button class="btn-yes" onclick="sayYes()">Yes! 💕</button>
+        <button class="btn-no" id="noBtn" onmouseover="runAway(this)" onclick="runAway(this)">No</button>
+      </div>
+    </div>
+
+    <!-- Screen 4: She said yes -->
+    <div id="answer-screen">
+      <div class="confetti-hearts">💖 💗 💘</div>
+      <div class="answer-title">She said YES!</div>
+      <div class="answer-sub">
+        You just made me the happiest person alive, Mabel. 🌙<br/>
+        I promise to make every moment worth it. ✨
+      </div>
+      <div class="champagne">🥂</div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
